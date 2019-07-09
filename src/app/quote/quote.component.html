@@ -1,0 +1,23 @@
+<div class='container-njoro'>
+    <div class='row'>
+        <div class='col-6'>
+            <h1>KING NJOSH QUOTES</h1>
+            <div class="card" *ngFor='let quote of quotes let i = index'>
+                <div class="njoro">
+                    <p>Published by: {{ quote.publisher }}</p>
+                </div>
+                <div class="njoro">
+                    <p>{{ quote.description }}</p>
+                    <p>Time: {{ quote.days|dateCount }} days ago</p>
+                </div>
+                <div class="njoro">
+                    <app-quote-description [quote]='quote' (isComplete) = 'deleteQuote($event,i)'></app-quote-description>
+                </div>
+            </div>
+        </div>
+        <div class='col-6'>
+            <h2>Create Quotes</h2>
+            <app-quote-form (addQuote)='addNewQuote($event)'></app-quote-form>
+        </div>   
+    </div>
+</div>

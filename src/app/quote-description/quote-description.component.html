@@ -1,0 +1,4 @@
+<p>Author: <i>{{ quote.author }}</i></p>
+<button (click)="voteQuoteUp()" class="btn btn-outline-danger" type="submit">Like</button><span class="badge badge-danger">{{ upvotes }} likes</span>
+<button (click)="voteQuoteDown()" class="btn btn-outline-danger">Dislike</button><span class="badge badge-danger">{{downvotes}} Dislikes</span>
+<button (click)= 'quoteDelete(true)' class="btn btn-outline-danger">Delete</button>
